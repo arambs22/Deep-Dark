@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
+
 public class Weapon : MonoBehaviour
 {
     public Transform bulletSpawnPoint;
@@ -10,6 +12,7 @@ public class Weapon : MonoBehaviour
     public Rigidbody2D playerRb;
     private int ammo;
     bool isReloading = false;
+    public TextMeshProUGUI ammoText;
 
     void Start()
     {
@@ -19,6 +22,8 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
+        ammoText.text = ammo + "/" + maxAmmo;
+
         if (Input.GetMouseButtonDown(0) && Time.time > lastFireTime + 1f / fireRate && ammo > 0 && !isReloading)
         {
             Fire();
@@ -35,9 +40,16 @@ public class Weapon : MonoBehaviour
     IEnumerator Reload()
     {
         isReloading = true;
-        yield return new WaitForSeconds(3);
+
+        for (float t = 0; t < 3; t += Time.deltaTime)
+        {
+            ammoText.text = "Recargando...";
+            yield return null;
+        }
+
         ammo = maxAmmo;
-        Debug.Log("Reload complete!");
+        ammoText.text = ammo + "/" + maxAmmo;
+
         isReloading = false;
     }
 

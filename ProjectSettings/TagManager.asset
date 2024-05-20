@@ -51,3 +51,6 @@ TagManager:
   - name: Player
     uniqueID: 1185960177
     locked: 0
+  - name: DeathScreen
+    uniqueID: 3641984609
+    locked: 0

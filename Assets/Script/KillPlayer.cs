@@ -1,20 +1,16 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class NewBehaviourScript : MonoBehaviour
+public class KillPlayer : MonoBehaviour
 {
-    public int Respawn;
+    public GameManager gameManager; // Reference to the GameManager
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
         {
-            Invoke("RespawnPlayer", 0); // Wait for 2 seconds before respawning
+            Debug.Log("Player hit enemy");
+            Debug.Log("GameManager is: " + gameManager);
+            gameManager.PlayerDied(); // Call the PlayerDied method
         }
-    }
-
-    void RespawnPlayer()
-    {
-        SceneManager.LoadScene(Respawn);
     }
 }
