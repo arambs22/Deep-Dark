@@ -9,10 +9,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Bullets
   - 
   - 
   - 
@@ -44,4 +44,10 @@ TagManager:
     locked: 0
   - name: Above Background
     uniqueID: 369785371
+    locked: 0
+  - name: Bullets
+    uniqueID: 3604878441
+    locked: 0
+  - name: Player
+    uniqueID: 1185960177
     locked: 0
