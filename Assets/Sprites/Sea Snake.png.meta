@@ -191,7 +191,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sea Snake_0: 431302051303877180
+      Sea Snake_1: -7845991583829556147
+      Sea Snake_2: 796008731031636505
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
